@@ -6,16 +6,15 @@ import java.util.Scanner;
         String originalWithoutSpacesAndTabs = original.replaceAll("\\s+", "");
 
         int length = originalWithoutSpacesAndTabs.length();
-         for ( int i = length - 1; i >= 0; i-- ) {
+        for ( int i = length - 1; i >= 0; i-- ) {
              reversed = reversed + originalWithoutSpacesAndTabs.charAt(i);
-         }
+        }
 
-         if (areWordsEqual(originalWithoutSpacesAndTabs, reversed)) {
+        if (areWordsEqual(originalWithoutSpacesAndTabs, reversed)) {
              System.out.println("'" + original + "'"+ " is a palindrome.");
-         } else {
+        } else {
              System.out.println("'" + original + "'"+" isn't a palindrome.");
-         }
-
+        }
     }
 
     private static boolean areWordsEqual(String original, String reversed) {
@@ -26,18 +25,18 @@ import java.util.Scanner;
     }
 
    public static void main(String args[]) {
-    Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
-    System.out.println("enter number of elements you want to check");
+        System.out.println("enter number of elements you want to check");
 
-    int numberOfPhrasesToCheck = Integer.parseInt(in.nextLine());
+        int numberOfPhrasesToCheck = Integer.parseInt(in.nextLine());
 
-    System.out.println("Please enter the strings to check if it is a palindrome");
+        System.out.println("Please enter the strings to check if it is a palindrome");
 
-    for (int k = 0; k < numberOfPhrasesToCheck; k++) {
-        String phraseToBeChecked = in.nextLine();
-        isPalindrome(phraseToBeChecked);
-    }
+        for (int k = 0; k < numberOfPhrasesToCheck; k++) {
+            String phraseToBeChecked = in.nextLine();
+            isPalindrome(phraseToBeChecked);
+        }
    }  
 }    
 	 
