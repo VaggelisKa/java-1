@@ -1,49 +1,43 @@
+import java.util.Scanner;
 
+ class Main {
+    static void isPalindrome(String original) {
+        String reversed = "";
+        String originalWithoutSpacesAndTabs = original.replaceAll("\\s+", "");
 
-import java.util.Scanner;   
+        int length = originalWithoutSpacesAndTabs.length();
+         for ( int i = length - 1; i >= 0; i-- ) {
+             reversed = reversed + originalWithoutSpacesAndTabs.charAt(i);
+         }
 
- public class Main  
-{  
-static void isPalindrome(String original){
-	String reverse = "";
-	String originalnew = original.replaceAll("[\\n\\t ]", "");
-	int length = originalnew.length();
-	 for ( int i = length - 1; i >= 0; i-- )  
-         reverse = reverse + originalnew.charAt(i);  
-      if (originalnew.toLowerCase().equals(reverse.toLowerCase()))  
-         System.out.println("'" + original + "'"+ " is a palindrome.");  
-      else  
-         System.out.println("'" + original + "'"+" isn't a palindrome.");
-	
-}
+         if (areWordsEqual(originalWithoutSpacesAndTabs, reversed)) {
+             System.out.println("'" + original + "'"+ " is a palindrome.");
+         } else {
+             System.out.println("'" + original + "'"+" isn't a palindrome.");
+         }
 
-   public static void main(String args[])  
-   {  
-      
-      Scanner in = new Scanner(System.in);   
-	  
-	  
-	 System.out.println("enter number of elements you want to check");
+    }
 
-    int n = in.nextInt();
-	  
-	String[] array = new String[n];
+    private static boolean areWordsEqual(String original, String reversed) {
+        String lowerCasedOriginal = original.toLowerCase();
+        String lowerCasedReversed = reversed.toLowerCase();
+
+        return lowerCasedOriginal.equals(lowerCasedReversed);
+    }
+
+   public static void main(String args[]) {
+    Scanner in = new Scanner(System.in);
+
+    System.out.println("enter number of elements you want to check");
+
+    int numberOfWordsToCheck = Integer.parseInt(in.nextLine());
 
     System.out.println("Please enter the strings to check if it is a palindrome");
 
-    for (int k = 0; k < array.length; k++) {
-	 String original = in.nextLine();
-         array[k] = original;	   
-	   isPalindrome(array[k]);
-	  
-	  
+    for (int k = 0; k < numberOfWordsToCheck; k++) {
+        String wordToBeChecked = in.nextLine();
+        isPalindrome(wordToBeChecked);
     }
-	  
-	  
-	  
-	  
-      
-         
    }  
 }    
 	 
