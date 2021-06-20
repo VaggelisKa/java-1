@@ -30,13 +30,13 @@ import java.util.Scanner;
 
     System.out.println("enter number of elements you want to check");
 
-    int numberOfWordsToCheck = Integer.parseInt(in.nextLine());
+    int numberOfPhrasesToCheck = Integer.parseInt(in.nextLine());
 
     System.out.println("Please enter the strings to check if it is a palindrome");
 
-    for (int k = 0; k < numberOfWordsToCheck; k++) {
-        String wordToBeChecked = in.nextLine();
-        isPalindrome(wordToBeChecked);
+    for (int k = 0; k < numberOfPhrasesToCheck; k++) {
+        String phraseToBeChecked = in.nextLine();
+        isPalindrome(phraseToBeChecked);
     }
    }  
 }    
